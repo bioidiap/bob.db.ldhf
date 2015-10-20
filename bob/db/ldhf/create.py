@@ -119,6 +119,8 @@ def add_protocols(session, verbose):
     
     world_clients = list(set(clients).difference(set(dev_clients)))
     insert_protocol_data(session, p, "world", "train", world_clients)    
+    
+    offset += 10
 
 
 def insert_protocol_data(session, protocol, group, purpose, clients_ids):

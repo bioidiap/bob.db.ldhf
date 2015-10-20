@@ -209,10 +209,6 @@ def main(command_line_parameters=None):
 
   args = command_line_arguments(command_line_parameters)
 
-
-  
-
-
   # get some colors for plotting
   cmap = pyplot.cm.get_cmap(name='hsv')
   colors = [cmap(i) for i in numpy.linspace(0, 1.0, len(args.dev_files)+1)]
@@ -306,3 +302,6 @@ def main(command_line_parameters=None):
       rr = bob.measure.recognition_rate(cmcs_dev[i])
       print("The Recognition Rate of the development set of '%s' is %2.3f%%" % (args.legends[i], rr * 100.))
 
+  #Deleting the temp files
+  for f in args.dev_files:
+    os.remove(f)
