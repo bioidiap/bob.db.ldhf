@@ -50,6 +50,10 @@ setup(
       'bob.db': [
         'ldhf = bob.db.ldhf.driver:Interface',
       ],
+
+      'console_scripts' : [
+        'ldhf_evaluate.py         = bob.db.ldhf.script.ldhf_evaluate:main',
+      ],
     },
 
     classifiers = [
