@@ -22,14 +22,12 @@ import six
 from bob.db.base import utils
 from .models import *
 from .models import PROTOCOLS, GROUPS, PURPOSES
-
 from .driver import Interface
-
-import bob.db.verification.utils
+import bob.db.base
 
 SQLITE_FILE = Interface().files()[0]
 
-class Database(bob.db.verification.utils.SQLiteDatabase, bob.db.verification.utils.ZTDatabase):
+class Database(bob.db.base.SQLiteDatabase):
 
   """Wrapper class for the Long Distance Heterogeneous Face Database (LDHF-DB) (http://biolab.korea.ac.kr/database/)
 
@@ -37,15 +35,24 @@ class Database(bob.db.verification.utils.SQLiteDatabase, bob.db.verification.uti
 
   def __init__(self, original_directory = None, original_extension = None):
     # call base class constructors to open a session to the database
-    bob.db.verification.utils.SQLiteDatabase.__init__(self, SQLITE_FILE, File)
-    bob.db.verification.utils.ZTDatabase.__init__(self, original_directory=original_directory, original_extension=original_extension)
-
+    super(Database, self).__init__(SQLITE_FILE, File,
+                                   original_directory, original_extension)
+  
   
   def protocols(self):
     return PROTOCOLS
 
   def purposes(self):
     return PURPOSES
+
+  @property
+  def modality_separator(self):
+      return "photo"
+
+  @property
+  def modalities(self):
+      return ['photo', 'sketch']
+
 
 
   def annotations(self, file, annotation_type="eyes_center"):

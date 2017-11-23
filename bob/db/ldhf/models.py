@@ -27,9 +27,7 @@ from sqlalchemy import Table, Column, Integer, String, Boolean, ForeignKey, or_,
 from bob.db.base.sqlalchemy_migration import Enum, relationship
 from sqlalchemy.orm import backref
 from sqlalchemy.ext.declarative import declarative_base
-
-import bob.db.verification.utils
-
+import bob.db.base
 import os
 
 Base = declarative_base()
@@ -111,7 +109,7 @@ class Annotation(Base):
 
 
 
-class File(Base, bob.db.verification.utils.File):
+class File(Base, bob.db.base.File):
   """
   Information about the files of the LDHF database.
 
@@ -148,8 +146,4 @@ class File(Base, bob.db.verification.utils.File):
       raise ValueError("Annotations type {0} invalid. Only 'eyes_center' is allowed".format(annotation_type))
       
     return data
-
-    
-
-
 
