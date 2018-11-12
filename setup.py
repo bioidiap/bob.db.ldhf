@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+ #!/usr/bin/env python
 # vim: set fileencoding=utf-8 :
 # Tiago de Freitas Pereira <tiago.pereira@idiap.ch>
 # Thu Oct 15 17:35:01 CEST 2015
@@ -18,14 +18,20 @@
 # along with this program. If not, see <http://www.gnu.org/licenses/>.
 
 from setuptools import setup, find_packages
+from bob.extension.utils import load_requirements
+install_requires = load_requirements()
+
+
+# Define package version
+version = open("version.txt").read().rstrip()
 
 setup(
 
     name='bob.db.ldhf',
-    version='0.0.0a1',
+    version=version,
     description='Long Distance Heterogeneous Face Database (LDHF)',
-    url='',
-    license='GPLv3',
+    url='https://gitlab.idiap.ch/bob/bob.db.ldhf',
+    license='BSD',
     keywords = "",
     author='Tiago de Freitas Pereira',
     author_email='tiago.pereira@idiap.ch',
@@ -35,10 +41,7 @@ setup(
     include_package_data=True,
     zip_safe = False,
 
-    install_requires=[
-      'setuptools',
-      'bob.db.base',
-    ],
+    install_requires=install_requires,
 
     namespace_packages = [
       'bob',
@@ -52,18 +55,19 @@ setup(
       ],
 
       'console_scripts' : [
-        'ldhf_evaluate.py         = bob.db.ldhf.script.ldhf_evaluate:main',
       ],
     },
 
     classifiers = [
       'Development Status :: 4 - Beta',
       'Intended Audience :: Education',
-      'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
+      'License :: OSI Approved :: BSD License',
       'Natural Language :: English',
       'Programming Language :: Python',
       'Programming Language :: Python :: 3',
       'Topic :: Scientific/Engineering :: Artificial Intelligence',
       'Topic :: Database :: Front-Ends',
+    ],
+
     ],
 )
