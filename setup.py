@@ -68,6 +68,4 @@ setup(
       'Topic :: Scientific/Engineering :: Artificial Intelligence',
       'Topic :: Database :: Front-Ends',
     ],
-
-    ],
 )
