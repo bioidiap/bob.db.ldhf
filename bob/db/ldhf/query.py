@@ -54,13 +54,15 @@ class Database(bob.db.base.SQLiteDatabase):
       return ['photo', 'sketch']
 
 
-
   def annotations(self, file, annotation_type="eyes_center"):
     """This function returns the annotations for the given file id as a dictionary.
-    Keyword parameters:
-    file : :py:class:`bob.db.verification.utils.File` or one of its derivatives
+
+    **Parameters**
+    
+    file: :py:class:`bob.db.base.File`
       The File object you want to retrieve the annotations for,
-    Return value:
+      
+    **Return**
       A dictionary of annotations, for face images usually something like {'leye':(le_y,le_x), 'reye':(re_y,re_x), ...},
       or None if there are no annotations for the given file ID (which is the case in this base class implementation).
     """    

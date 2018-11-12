@@ -13,11 +13,10 @@ The actual raw data for the database should be downloaded from the original URL.
 The Database Interface
 ----------------------
 
-The :py:class:`bob.db.ldhf.Database` complies with the standard biometric verification database as described in :ref:`commons`, implementing both interfaces :py:class:`bob.db.verification.utils.SQLiteDatabase` and :py:class:`bob.db.verification.utils.ZTDatabase`.
-
+The :py:class:`bob.db.ldhf.Database` complies with the standard biometric verification database as described in `bob.db.base <bob.db.base>`_, implementing the interface :py:class:`bob.db.base.SQLiteDatabase`.
 
 LDHF-DB Protocols
----------------
+-----------------
 
 There are 10 protocols implemented in this database ('split1','split2','split3','split4','split5','split6','split7','split8','split9','split10').
 
@@ -40,8 +39,6 @@ The protocols correspond to 10-fold cross-validation letting 90 identities for t
 According to the mentioned publication were implemented the cross-spectral and the cross-distance evaluations where the 1m VIS images are used for enrollment and the NIR images with different standoffs (1m, 60m, 100m and 150m) are used for probing.
 
 
-.. todo::
-   Explain further particularities of the :py:class:`bob.db.ldhf.Database`.
 
 
 .. _LDHF-DB: http://biolab.korea.ac.kr/database/

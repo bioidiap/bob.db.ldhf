@@ -5,6 +5,7 @@
 logs
 replay
 *.db
+*.sql3
 .installed.cfg
 parts
 develop-eggs
