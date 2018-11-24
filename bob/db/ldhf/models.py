@@ -132,7 +132,8 @@ class File(Base, bob.db.base.File):
 
   def __init__(self, file_id, image_name, client_id, modality, distance):
     # call base class constructor
-    bob.db.verification.utils.File.__init__(self, file_id=file_id, client_id = client_id, path = image_name)
+    bob.db.base.File.__init__(self, file_id=file_id, path = image_name)
+    self.client_id = client_id
     self.modality = modality
     self.distance = distance
 

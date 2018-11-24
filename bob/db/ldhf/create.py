@@ -105,7 +105,7 @@ def add_protocols(session, verbose):
 
   import numpy
   numpy.random.seed(10) #Fixing a seed
-  clients = range(1,101)
+  clients = list(range(1,101))
   numpy.random.shuffle(clients) #Shufling the 100 clients
   
   offset = 0
