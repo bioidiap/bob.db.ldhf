@@ -53,15 +53,15 @@ def test01_protocols_purposes_groups():
 
 def test02_all_files_protocols():
 
-  world_files = 720
-  enroll_files  = 10
-  probe_files   = 400
+  world_files = 400
+  enroll_files  = 50
+  probe_files   = 10000
   possible_protocols = bob.db.ldhf.Database().protocols()
 
   for p in possible_protocols:
     assert len(bob.db.ldhf.Database().objects(protocol=p, groups='world'))                 == world_files
     assert len(bob.db.ldhf.Database().objects(protocol=p, groups='dev', purposes="enroll")) == enroll_files
-    assert len(bob.db.ldhf.Database().objects(protocol=p, groups='dev', purposes="probe"))  == probe_files           
+    assert len(bob.db.ldhf.Database().objects(protocol=p, groups='dev', purposes="probe"))  == probe_files
 
 
 def test03_strings():

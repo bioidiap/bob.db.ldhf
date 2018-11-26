@@ -105,22 +105,28 @@ def add_protocols(session, verbose):
 
   import numpy
   numpy.random.seed(10) #Fixing a seed
-  clients = list(range(1,101))
-  numpy.random.shuffle(clients) #Shufling the 100 clients
   
-  offset = 0
+  offset = 0  # offset always ZERO since we have only train-dev (not eval)
+  train_files = 50
   for p in PROTOCOLS:
+
+    clients = list(range(1,101))
+    numpy.random.shuffle(clients) #Shufling the 100 clients
 
     if verbose>=1: print("  Adding protocol {0}".format(p))
 
-    #Selecting the clients for the split (90% training, 10% test)        
-    dev_clients   = clients[offset : offset+10]
+    #Selecting the clients for the split (90% training, 10% test)
+    ##############
+    # THE ORIGINAL PAPER USES AN EXTENSION OF THE SET OF VIS IMAGES FROM A PRIVATE DATASET,
+    # CHECK PAGE 15 AND 26 OF THE PAPER.
+    # HENCE I WILL ADAPT THE PROTOCOL AND USE 50 SAMPLES FOR TRAINING AND 50 SAMPLES FOR TESTING
+    ##############
+    
+    dev_clients   = clients[offset : offset+train_files]
     insert_protocol_data(session, p, "dev", "", dev_clients)
     
     world_clients = list(set(clients).difference(set(dev_clients)))
-    insert_protocol_data(session, p, "world", "train", world_clients)    
-    
-    offset += 10
+    insert_protocol_data(session, p, "world", "train", world_clients)
 
 
 def insert_protocol_data(session, protocol, group, purpose, clients_ids):
