@@ -4,7 +4,7 @@
 
    
 .. image:: http://img.shields.io/badge/docs-stable-yellow.png
-   :target: http://beatubulatest.lab.idiap.ch/private/docs/bob/bob.db.ldhf/stable/index.html
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.ldhf/stable/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.png
    :target: http://beatubulatest.lab.idiap.ch/private/docs/bob/bob.db.ldhf/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.db.ldhf/badges/master/build.svg
@@ -33,20 +33,22 @@ This package implements the cross-disntance and cross-spectral evaluation protoc
 
   D. Kang, H. Han, A. K. Jain, and S.-W. Lee, "Nighttime Face Recognition at Large Standoff: Cross-Distance and Cross-Spectral Matching", Pattern Recognition, Vol. 47, No. 12, 2014, pp. 3750-3766.
 
-
 Installation
 ------------
 
-Follow our `installation`_ instructions. Then, using the Python interpreter
-provided by the distribution, bootstrap and buildout this package::
+Follow our `installation`_ instructions. Then, to install this package, run::
+   
+   $ conda install bob.db.ldhf
 
 
 Contact
 -------
 
-For questions or reporting issues to this software package, contact our
-development `mailing list`_.
+   For questions or reporting issues to this software package, contact our
+   development `mailing list`_.
+
 
 .. Place your references here:
+.. _bob: https://www.idiap.ch/software/bob
 .. _installation: https://gitlab.idiap.ch/bob/bob/wikis/Installation
 .. _mailing list: https://groups.google.com/forum/?fromgroups#!forum/bob-devel
