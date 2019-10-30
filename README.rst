@@ -3,12 +3,12 @@
 .. Thu Apr 16 16:39:01 CEST 2015
 
    
-.. image:: http://img.shields.io/badge/docs-stable-yellow.png
-   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.ldhf/stable/index.html
+.. image:: http://img.shields.io/badge/docs-v1.0.2-yellow.png
+   :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.ldhf/v1.0.2/index.html
 .. image:: http://img.shields.io/badge/docs-latest-orange.png
    :target: http://beatubulatest.lab.idiap.ch/private/docs/bob/bob.db.ldhf/master/index.html
-.. image:: https://gitlab.idiap.ch/bob/bob.db.ldhf/badges/master/build.svg
-   :target: https://gitlab.idiap.ch/bob/bob.db.ldhf/commits/master
+.. image:: https://gitlab.idiap.ch/bob/bob.db.ldhf/badges/v1.0.2/build.svg
+   :target: https://gitlab.idiap.ch/bob/bob.db.ldhf/commits/v1.0.2
 .. image:: https://img.shields.io/badge/gitlab-project-0000c0.svg
    :target: https://github.com/bioidiap/bob.db.ldhf
 .. image:: http://img.shields.io/pypi/v/bob.db.ldhf.png
