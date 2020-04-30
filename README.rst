@@ -3,7 +3,7 @@
 .. Thu Apr 16 16:39:01 CEST 2015
 
    
-.. image:: https://img.shields.io/badge/docs-available-orage.svg
+.. image:: https://img.shields.io/badge/docs-available-orange.svg
    :target: https://www.idiap.ch/software/bob/docs/bob/bob.db.ldhf/master/index.html
 .. image:: https://gitlab.idiap.ch/bob/bob.db.ldhf/badges/master/pipeline.svg
    :target: https://gitlab.idiap.ch/bob/bob.db.ldhf/commits/master
